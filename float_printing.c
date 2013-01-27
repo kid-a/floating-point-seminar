@@ -1,7 +1,47 @@
-#include <stdio.h>
+#include <iostream>
+#include <bitset>
+#include <stdint.h>
+#include <sys/types.h>
+
+using namespace std;
+
+union float_t
+{
+  int32_t i;
+  float f;
+
+  struct
+  {
+    uint32_t significand : 23;
+    uint32_t exponent : 8;
+    uint32_t sign : 1;
+  } parts;  
+};
+
 
 int main ()
 {
+  float_t a;
+  a.f = -0.1;
+  
+  // print the float
+  cout << endl << a.f << endl << endl;
+  
+  // print each part separately
+  std::bitset<23> significand(a.parts.significand);
+  std::bitset<8> exponent(a.parts.exponent);
+  std::bitset<1> sign(a.parts.sign);
+  
+  cout << "Sign |Significand             |Exponent" << endl;
+  cout << sign << "    |" << significand << " |" << exponent << endl;
+  
+  // print the decimal representations
+  cout << endl << "Decimal representation: ";
+  if (a.parts.sign == 0) cout << "+ ";
+  else cout << "- ";
+  
+  cout << "1." << a.parts.significand << " x 2 ** "
+       << a.parts.exponent - 127 << endl; 
   
   return 0;
 }
