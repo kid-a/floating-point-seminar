@@ -1,11 +1,12 @@
 #include <iostream>
 #include <bitset>
 #include <stdint.h>
+#include <math.h>
 #include <sys/types.h>
 
 using namespace std;
 
-union float_t
+union my_float
 {
   int32_t i;
   float f;
@@ -21,8 +22,8 @@ union float_t
 
 int main ()
 {
-  float_t a;
-  a.f = -0.1;
+  my_float a;
+  a.f = 0.f;
   
   // print the float
   cout << endl << a.f << endl << endl;
@@ -36,11 +37,11 @@ int main ()
   cout << sign << "    |" << significand << " |" << exponent << endl;
   
   // print the decimal representations
-  cout << endl << "Decimal representation: ";
+  cout << endl << "Number represented: ";
   if (a.parts.sign == 0) cout << "+ ";
   else cout << "- ";
   
-  cout << "1." << a.parts.significand << " x 2 ** "
+  cout << "0b1." << significand << " x 2 ** "
        << a.parts.exponent - 127 << endl; 
   
   return 0;
