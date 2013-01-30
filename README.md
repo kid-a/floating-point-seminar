@@ -7,5 +7,5 @@ on January, 31st 2013.
 References
 ==========
 
-* David Goldberg, What every Computer Scientist Should Know About Floating-Point Arithmetic
+* David Goldberg, (What every Computer Scientist Should Know About Floating-Point Arithmetic)[http://perso.ens-lyon.fr/jean-michel.muller/goldberg.pdf]
 
