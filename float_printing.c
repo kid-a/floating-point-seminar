@@ -22,8 +22,12 @@ union my_float
 
 int main ()
 {
+  // declare and initialize a floating point number
+  float f = 0.1f;
+  
+  // copy the floating point 
   my_float a;
-  a.f = 0.1f;
+  a.f = f;
   
   // print the float
   cout << endl << a.f << endl << endl;
@@ -40,9 +44,11 @@ int main ()
   cout << endl << "Number represented: ";
   if (a.parts.sign == 0) cout << "+ ";
   else cout << "- ";
-  
-  cout << "0b1." << significand << " x 2 ** "
-       << a.parts.exponent - 127 << endl; 
+
+  // add "1." after "0b"
+  // add -127 to the exponent
+  cout << "0b" << significand << " x 2 ** "
+       << a.parts.exponent << endl; 
   
   return 0;
 }
