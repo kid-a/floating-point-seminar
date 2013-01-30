@@ -23,7 +23,7 @@ union my_float
 int main ()
 {
   my_float a;
-  a.f = 0.f;
+  a.f = 0.1f;
   
   // print the float
   cout << endl << a.f << endl << endl;
