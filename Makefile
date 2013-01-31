@@ -11,3 +11,9 @@ vector-sum:
 
 run-vector-sum:
 	./float_vector_sum
+
+time:
+	$(CC) float_time.cc -o float_time
+
+run-time:
+	./float_time

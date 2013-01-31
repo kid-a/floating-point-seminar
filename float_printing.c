@@ -24,7 +24,7 @@ int main ()
 {
   // declare and initialize a floating point number
   float f = 0.1f;
-  
+
   // copy the floating point 
   my_float a;
   a.f = f;
@@ -47,8 +47,8 @@ int main ()
 
   // add "1." after "0b"
   // add -127 to the exponent
-  cout << "0b" << significand << " x 2 ** "
-       << a.parts.exponent << endl; 
+  cout << "0b1." << significand << " x 2 ** "
+       << a.parts.exponent - 127 << endl; 
   
   return 0;
 }
